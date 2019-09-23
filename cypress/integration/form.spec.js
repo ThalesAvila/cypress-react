@@ -14,4 +14,9 @@ describe('Form', () => {
       .type(input)
       .should('have.value', input)
   })
+
+  it('displays list of todo', () => {
+    cy.get('li')
+      .should('have.length', 2)
+  })
 })
