@@ -59,6 +59,7 @@ class App extends Component {
                 onChange={this.handleInputChange}
                 placeholder="Enter a task"
                 className="form-control"
+                data-test="form-control"
               />
             </div>
           </div>
