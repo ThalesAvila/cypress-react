@@ -28,4 +28,13 @@ describe('Form', () => {
       .get('li')
       .should('have.length', 3)
   })
+
+  it('should deletes a todo', () => {
+    cy.get('li')
+      .first()
+      .find('.btn-danger')
+      .click()
+      .get('li')
+      .should('have.length', 1)
+  })
 })
