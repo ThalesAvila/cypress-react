@@ -8,7 +8,7 @@ class Todo extends Component {
         return (
         <div>
             {this.props.value}
-            <button className="btn btn-danger" onClick={() => this.deleteTodo(this.props.id)}>X</button>
+            <button className="btn btn-danger" data-test="btn-delete" onClick={() => this.deleteTodo(this.props.id)}>X</button>
         </div>
         );
     }
