@@ -22,7 +22,7 @@ describe('Form', () => {
 
   it('should add a new todo', () => {
     const input = "Learn about cypress"
-    cy.get('.form-control')
+    cy.get('[data-test=form-control]')
       .type(input)
       .type('{enter}')
       .get('li')
@@ -36,5 +36,18 @@ describe('Form', () => {
       .click()
       .get('li')
       .should('have.length', 1)
+  })
+
+  it('should deletes all todo', () => {
+    cy.get('li')
+      .first()
+      .find('.btn-danger')
+      .click()
+      .get('li')
+      .first()
+      .find('.btn-danger')
+      .click()
+      .get('.no-task')
+      .should('have.text', 'No task!')
   })
 })
